@@ -3,74 +3,84 @@
 ![FixedCoin](https://img.shields.io/badge/version-1.0.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Supply](https://img.shields.io/badge/supply-10%2C000%20FXC-orange.svg)
-![Status](https://img.shields.io/badge/status-FIXED-red.svg)
+![Algorithm](https://img.shields.io/badge/algorithm-SHA--256-blue.svg)
 
 > **"Once mined at block 1, this repository will be archived. Everything is Fixed."**
 
-## 🔐 The Fixed Concept
+## 🔐 What is FixedCoin?
 
-FixedCoin isn't just another cryptocurrency - it's a statement about immutability and scarcity. With only **10,000 FXC** total supply and a codebase that will be **permanently archived after block 1**, FixedCoin represents the ultimate digital scarcity experiment.
+FixedCoin is an ultra-rare cryptocurrency with a total supply of only **10,000 FXC**. Built on Bitcoin's proven codebase and secured by SHA-256 mining, FixedCoin represents the ultimate experiment in digital scarcity and immutability.
 
-### Why "Fixed"?
+**The Fixed Concept:**
+- Repository will be **permanently archived** after block 1
+- No future code changes or governance
+- Pure, immutable, fixed forever
 
-- ✅ **Code is Fixed** - Repository archived after block 1, no future changes
-- ✅ **Supply is Fixed** - Exactly 10,000 FXC, no more, no less
-- ✅ **Economics are Fixed** - Predetermined halving schedule, no governance changes
-- ✅ **Distribution is Fixed** - 2 years mining period, then transaction fees only
-
-## 💎 Tokenomics
+## 💎 Technical Specifications
 
 | Parameter | Value |
 |-----------|-------|
 | **Total Supply** | 10,000 FXC |
-| **Premine** | 1,600 FXC (16% - for listings, burned if unused) |
-| **Block Reward** | 1 FXC |
-| **Halving Interval** | Every 4,200 blocks |
-| **Last Reward Block** | 113,400 (~2 years) |
-| **Mining Algorithm** | SHA-256 (Bitcoin compatible) |
+| **Premine** | 1,600 FXC (16%) |
+| **Block Reward** | 1 FXC (initial) |
+| **Halving Interval** | 4,200 blocks |
+| **Last Reward Block** | 113,400 |
+| **Distribution Period** | ~2 years |
+| **Mining Algorithm** | SHA-256 |
 | **Block Time** | 10 minutes |
+| **Difficulty Adjustment** | Every 3 blocks |
 | **Coinbase Maturity** | 100 blocks |
 | **Transaction Confirmations** | 6 blocks |
-
-### Supply Distribution
-
-```
-Block 0 - 4,199:    1 FXC per block    = 4,200 FXC
-Block 4,200 - 8,399: 0.5 FXC per block  = 2,100 FXC
-Block 8,400 - 12,599: 0.25 FXC per block = 1,050 FXC
-... (continues halving)
-Total Minable: 8,400 FXC
-Premine: 1,600 FXC
-TOTAL: 10,000 FXC
-```
-
-## 🌐 Network Information
-
-| Network | Details |
-|---------|---------|
+| **Address Format** | Bech32 (fix1...) |
 | **RPC Port** | 24761 |
 | **P2P Port** | 24762 |
-| **Official Nodes** | node1.fixedcoin.org<br>node2.fixedcoin.org |
-| **ZMQ Block** | tcp://127.0.0.1:28332 |
-| **ZMQ TX** | tcp://127.0.0.1:28333 |
 
-## 🚀 Quick Start
+## 🌐 Network
 
-### Windows
+**Official Seed Nodes:**
+- node1.fixedcoin.org:24762
+- node2.fixedcoin.org:24762
 
-1. Download `fixedcoin-1.0.0-win64.zip` from [releases](https://github.com/Fixed-Blockchain/fixedcoin/releases/tag/FIX)
-2. Extract the archive
-3. Run `fixedcoin-qt.exe`
+**ZMQ Ports:**
+- Raw Block: 28332
+- Raw TX: 28333
+- Hash TX: 28334
+- Hash Block: 28335
+
+## 📥 Downloads
+
+### Latest Release: v1.0.0
+
+Download from [GitHub Releases](https://github.com/Fixed-Blockchain/fixedcoin/releases)
+
+**Windows:**
+- [fixedcoin-1.0.0-win64.zip](https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-1.0.0-win64.zip)
+
+**Linux:**
+- [fixedcoin-1.0.0-x86_64-linux-gnu.tar.gz](https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-1.0.0-x86_64-linux-gnu.tar.gz)
+
+## 🚀 Quick Start Guide
+
+### Windows Installation
+
+1. Download `fixedcoin-1.0.0-win64.zip`
+2. Extract the archive to a folder (e.g., `C:\FixedCoin`)
+3. Run `fixedcoin-qt.exe` to start the wallet
 4. Wait for blockchain synchronization
 
-### Linux
+### Linux Desktop Installation
 
 ```bash
-# Download and extract
-wget https://github.com/VOTRE_USERNAME/fixedcoin/releases/download/v1.0.0/fixedcoin-1.0.0-linux-x86_64.tar.gz
-tar -xzf fixedcoin-1.0.0-linux-x86_64.tar.gz
+# Download
+wget https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-1.0.0-x86_64-linux-gnu.tar.gz
 
-# Run wallet GUI
+# Extract
+tar -xzf fixedcoin-1.0.0-x86_64-linux-gnu.tar.gz
+
+# Navigate to bin directory
+cd fixedcoin-1.0.0/bin
+
+# Run GUI wallet
 ./fixedcoin-qt
 
 # Or run daemon
@@ -79,7 +89,7 @@ tar -xzf fixedcoin-1.0.0-linux-x86_64.tar.gz
 
 ## 🖥️ Ubuntu Server 22.04 Node Setup
 
-Complete guide to run a FixedCoin node on Ubuntu Server 22.04.
+Complete step-by-step guide to install and run a FixedCoin node on Ubuntu Server 22.04.
 
 ### Prerequisites
 
@@ -94,24 +104,36 @@ sudo apt-get update && sudo apt-get upgrade -y
 sudo mkdir -p /var/fixedcoin
 
 # Create subdirectories
-sudo mkdir -p /var/fixedcoin/bin        # Binaries
-sudo mkdir -p /var/fixedcoin/data       # Blockchain data
-sudo mkdir -p /var/fixedcoin/downloads  # Temporary downloads
+sudo mkdir -p /var/fixedcoin/bin
+sudo mkdir -p /var/fixedcoin/data
+sudo mkdir -p /var/fixedcoin/downloads
 
-# Set permissions
+# Set ownership
 sudo chown -R $USER:$USER /var/fixedcoin
 ```
 
-### Step 2: Download FixedCoin
+Verify:
+```bash
+ls -la /var/fixedcoin
+```
+
+Expected output:
+```
+drwxr-xr-x bin
+drwxr-xr-x data
+drwxr-xr-x downloads
+```
+
+### Step 2: Download FixedCoin Binaries
 
 ```bash
 cd /var/fixedcoin/downloads
 
 # Download daemon
-wget "https://dl.walletbuilders.com/download?customer=YOUR_CUSTOMER_ID&filename=fixedcoin-daemon-linux.tar.gz" -O fixedcoin-daemon-linux.tar.gz
+wget "https://dl.walletbuilders.com/download?customer=ded2af3dffa79fe529a518714b7dea9488044bec748cb4ea4a&filename=fixedcoin-daemon-linux.tar.gz" -O fixedcoin-daemon-linux.tar.gz
 
-# Download tools
-wget "https://dl.walletbuilders.com/download?customer=YOUR_CUSTOMER_ID&filename=fixedcoin-qt-linux.tar.gz" -O fixedcoin-qt-linux.tar.gz
+# Download tools (CLI, TX utilities)
+wget "https://dl.walletbuilders.com/download?customer=ded2af3dffa79fe529a518714b7dea9488044bec748cb4ea4a&filename=fixedcoin-qt-linux.tar.gz" -O fixedcoin-qt-linux.tar.gz
 ```
 
 ### Step 3: Extract Files
@@ -121,16 +143,21 @@ tar -xzvf fixedcoin-daemon-linux.tar.gz
 tar -xzvf fixedcoin-qt-linux.tar.gz
 ```
 
-You should now have:
-- `fixedcoind` (14M) - Daemon
-- `fixedcoin-cli` (1.2M) - CLI tools
-- `fixedcoin-tx` (2.8M) - Transaction tools
-- `fixedcoin-qt` (40M) - GUI wallet
+Verify extraction:
+```bash
+ls -lh
+```
+
+You should see:
+- `fixedcoind` (14M)
+- `fixedcoin-cli` (1.2M)
+- `fixedcoin-tx` (2.8M)
+- `fixedcoin-qt` (40M)
 
 ### Step 4: Install Binaries
 
 ```bash
-# Move binaries
+# Move binaries to bin directory
 mv fixedcoind fixedcoin-cli fixedcoin-tx fixedcoin-qt /var/fixedcoin/bin/
 
 # Add to PATH
@@ -139,8 +166,12 @@ source ~/.bashrc
 
 # Verify installation
 which fixedcoind
+```
 
-# Clean up archives
+Expected output: `/var/fixedcoin/bin/fixedcoind`
+
+Clean up:
+```bash
 rm fixedcoin-daemon-linux.tar.gz fixedcoin-qt-linux.tar.gz
 ```
 
@@ -152,12 +183,12 @@ Create configuration file:
 nano /var/fixedcoin/data/fixedcoin.conf
 ```
 
-Paste this configuration:
+Paste the following configuration:
 
 ```ini
 # RPC Settings
-rpcuser=your_username
-rpcpassword=your_strong_password
+rpcuser=user159
+rpcpassword=pass159
 rpcbind=127.0.0.1
 rpcallowip=127.0.0.1
 rpcport=24761
@@ -168,7 +199,7 @@ server=1
 port=24762
 maxconnections=125
 
-# Official Nodes
+# Official Seed Nodes
 addnode=node1.fixedcoin.org
 addnode=node2.fixedcoin.org
 
@@ -184,39 +215,65 @@ zmqpubhashblock=tcp://127.0.0.1:28335
 
 # Wallet Configuration
 wallet=miningcore
-
-# Mining (optional - only if you want to mine)
-gen=1
-genproclimit=1
-mineraddress=YOUR_FIXEDCOIN_ADDRESS
 ```
 
-Save with `Ctrl + X`, then `Y`, then `Enter`
+**Important:** Change `rpcuser` and `rpcpassword` to secure values.
+
+Save with `Ctrl + X`, then `Y`, then `Enter`.
+
+Verify configuration:
+```bash
+cat /var/fixedcoin/data/fixedcoin.conf
+```
 
 ### Step 6: Create Wallet
 
+Start daemon manually for initial setup:
+
 ```bash
-# Start daemon manually first
 fixedcoind -datadir=/var/fixedcoin/data
-
-# Wait a few seconds, then create wallet
-fixedcoin-cli -datadir=/var/fixedcoin/data createwallet "miningcore"
-
-# Generate receiving address
-fixedcoin-cli -datadir=/var/fixedcoin/data getnewaddress
-
-# Save this address! Add it to fixedcoin.conf as mineraddress
 ```
+
+Wait 5 seconds, then create wallet:
+
+```bash
+fixedcoin-cli -datadir=/var/fixedcoin/data createwallet "miningcore"
+```
+
+Expected output:
+```json
+{
+  "name": "miningcore"
+}
+```
+
+Generate receiving address:
+
+```bash
+fixedcoin-cli -datadir=/var/fixedcoin/data getnewaddress
+```
+
+Example output: `fix1qjpunqltsnm2a4jpp87zh0646p7ta7hq0n8q4rk`
+
+**Save this address securely!**
 
 ### Step 7: Setup Systemd Service
 
-Create service file:
+Stop the manual daemon:
+
+```bash
+fixedcoin-cli -datadir=/var/fixedcoin/data stop
+```
+
+Wait 5 seconds for clean shutdown.
+
+Create systemd service file:
 
 ```bash
 sudo nano /etc/systemd/system/fixedcoind.service
 ```
 
-Paste this configuration:
+Paste the following:
 
 ```ini
 [Unit]
@@ -232,8 +289,6 @@ ExecStop=/var/fixedcoin/bin/fixedcoin-cli -datadir=/var/fixedcoin/data stop
 Restart=on-failure
 RestartSec=10
 PIDFile=/var/fixedcoin/data/fixedcoind.pid
-
-# Security limits
 LimitNOFILE=8192
 TimeoutStopSec=60
 
@@ -241,17 +296,16 @@ TimeoutStopSec=60
 WantedBy=multi-user.target
 ```
 
-Save with `Ctrl + X`, then `Y`, then `Enter`
+Save with `Ctrl + X`, then `Y`, then `Enter`.
 
 ### Step 8: Enable and Start Service
 
 ```bash
+# Add safe directory (if running as root)
+git config --global --add safe.directory /var/fixedcoin/fixedcoin-repo
+
 # Reload systemd
 sudo systemctl daemon-reload
-
-# Stop manual daemon
-fixedcoin-cli -datadir=/var/fixedcoin/data stop
-sleep 5
 
 # Enable service on boot
 sudo systemctl enable fixedcoind
@@ -263,139 +317,260 @@ sudo systemctl start fixedcoind
 sudo systemctl status fixedcoind
 ```
 
-### Service Management Commands
+Expected status: `active (running)`
+
+### Step 9: Verify Node Operation
+
+Check blockchain info:
+```bash
+fixedcoin-cli -datadir=/var/fixedcoin/data getblockchaininfo
+```
+
+Check network connections:
+```bash
+fixedcoin-cli -datadir=/var/fixedcoin/data getconnectioncount
+```
+
+Check peer information:
+```bash
+fixedcoin-cli -datadir=/var/fixedcoin/data getpeerinfo
+```
+
+View live logs:
+```bash
+sudo journalctl -u fixedcoind -f
+```
+
+Press `Ctrl + C` to exit logs.
+
+## 🔧 Node Management Commands
+
+### Service Management
 
 ```bash
-# View live logs
-sudo journalctl -u fixedcoind -f
-
-# Restart service
-sudo systemctl restart fixedcoind
+# Start service
+sudo systemctl start fixedcoind
 
 # Stop service
 sudo systemctl stop fixedcoind
 
+# Restart service
+sudo systemctl restart fixedcoind
+
 # Check status
 sudo systemctl status fixedcoind
+
+# View logs
+sudo journalctl -u fixedcoind -f
+
+# View last 100 lines of logs
+sudo journalctl -u fixedcoind -n 100
 ```
 
-## 🔧 Useful Commands
-
-### Blockchain Information
+### Blockchain Commands
 
 ```bash
+# Get blockchain information
 fixedcoin-cli -datadir=/var/fixedcoin/data getblockchaininfo
+
+# Get network information
 fixedcoin-cli -datadir=/var/fixedcoin/data getnetworkinfo
-fixedcoin-cli -datadir=/var/fixedcoin/data getconnectioncount
+
+# Get peer information
 fixedcoin-cli -datadir=/var/fixedcoin/data getpeerinfo
+
+# Get connection count
+fixedcoin-cli -datadir=/var/fixedcoin/data getconnectioncount
+
+# Get current block count
+fixedcoin-cli -datadir=/var/fixedcoin/data getblockcount
 ```
 
-### Wallet Operations
+### Wallet Commands
 
 ```bash
-# Get balance
+# Get wallet balance
 fixedcoin-cli -datadir=/var/fixedcoin/data getbalance
 
-# List wallets
+# List all wallets
 fixedcoin-cli -datadir=/var/fixedcoin/data listwallets
 
-# Get new address
+# Get new receiving address
 fixedcoin-cli -datadir=/var/fixedcoin/data getnewaddress
 
-# Send coins
-fixedcoin-cli -datadir=/var/fixedcoin/data sendtoaddress "address" amount
-
-# List transactions
+# List recent transactions
 fixedcoin-cli -datadir=/var/fixedcoin/data listtransactions
-```
 
-### Mining
+# Send FXC (replace with actual values)
+fixedcoin-cli -datadir=/var/fixedcoin/data sendtoaddress "fix1..." 1.0
 
-```bash
-# Check mining status
-fixedcoin-cli -datadir=/var/fixedcoin/data getmininginfo
-
-# Generate blocks (solo mining)
-fixedcoin-cli -datadir=/var/fixedcoin/data generatetoaddress 1 "your_address"
+# Get transaction details
+fixedcoin-cli -datadir=/var/fixedcoin/data gettransaction "txid"
 ```
 
 ## ⛏️ Mining FixedCoin
 
-FixedCoin uses **SHA-256** algorithm, making it compatible with Bitcoin mining hardware.
+FixedCoin uses **SHA-256** algorithm, making it compatible with Bitcoin ASIC miners.
 
-### Solo Mining
+### Solo Mining Configuration
 
-Add to `fixedcoin.conf`:
+Add to `/var/fixedcoin/data/fixedcoin.conf`:
+
 ```ini
+# Mining Configuration
 gen=1
 genproclimit=1
-mineraddress=YOUR_ADDRESS
+mineraddress=YOUR_FIXEDCOIN_ADDRESS
 ```
 
-Then restart the daemon.
+Replace `YOUR_FIXEDCOIN_ADDRESS` with your actual address (e.g., `fix1q...`).
+
+Restart daemon:
+```bash
+sudo systemctl restart fixedcoind
+```
+
+Check mining status:
+```bash
+fixedcoin-cli -datadir=/var/fixedcoin/data getmininginfo
+```
 
 ### Pool Mining
 
-Use any SHA-256 compatible mining software:
-- CGMiner
-- BFGMiner
-- NiceHash
+Configure any SHA-256 compatible mining software (cgminer, bfgminer, etc.) with:
+- **Pool URL:** Contact pool operator for stratum URL
+- **Port:** Contact pool operator
+- **Username:** Your FixedCoin address
+- **Password:** x
 
-Configure with your pool's stratum details.
+## 📊 Supply Schedule
+
+| Block Range | Reward per Block | Total FXC | Cumulative |
+|-------------|------------------|-----------|------------|
+| 0 - 4,199 | 1.0 FXC | 4,200 | 4,200 |
+| 4,200 - 8,399 | 0.5 FXC | 2,100 | 6,300 |
+| 8,400 - 12,599 | 0.25 FXC | 1,050 | 7,350 |
+| 12,600 - 16,799 | 0.125 FXC | 525 | 7,875 |
+| 16,800 - 20,999 | 0.0625 FXC | 262.5 | 8,137.5 |
+| ... | (continues halving) | ... | ... |
+| 113,400+ | 0 FXC | 0 | ~8,400 |
+| **Premine** | - | 1,600 | - |
+| **TOTAL** | - | **10,000 FXC** | - |
+
+After block 113,400 (~2 years), no new coins are created. Network security is maintained through transaction fees.
 
 ## 🔐 Security Best Practices
 
-- ✅ **Backup your wallet.dat** regularly
-- ✅ **Encrypt your wallet** with a strong passphrase
-- ✅ **Keep private keys offline** in cold storage
-- ✅ **Use strong RPC passwords**
-- ✅ **Enable firewall** on your server
-- ✅ **Regular system updates**
+### Wallet Security
 
-## 📊 Block Explorer
+- ✅ **Backup wallet regularly:** `wallet.dat` file is located in `/var/fixedcoin/data/`
+- ✅ **Encrypt wallet:** Use `encryptwallet` command with strong passphrase
+- ✅ **Secure private keys:** Never share your wallet.dat or private keys
+- ✅ **Use strong RPC passwords:** Change default credentials in fixedcoin.conf
 
-Coming soon: https://explorer.fixedcoin.org
+### Server Security
 
-## 🗺️ Roadmap
+- ✅ **Firewall:** Configure UFW to allow only necessary ports
+- ✅ **SSH security:** Use SSH keys, disable password authentication
+- ✅ **Regular updates:** Keep Ubuntu and FixedCoin up to date
+- ✅ **Monitoring:** Set up monitoring and alerting
 
-| Phase | Status | Description |
-|-------|--------|-------------|
-| **Block 0** | ✅ Complete | Genesis block created |
-| **Block 1** | ✅ Complete | First mine - Repository archived |
-| **Year 1-2** | 🔄 Active | Mining distribution (10,000 FXC) |
-| **Block 113,400** | 📅 Pending | Last block with mining reward |
-| **Post-Distribution** | 📅 Future | Network secured by transaction fees only |
+### Firewall Configuration
 
-## 📄 Technical Specifications
+```bash
+# Enable UFW
+sudo ufw enable
 
-```
-Algorithm:           SHA-256 (Proof of Work)
-Block Time:          10 minutes
-Difficulty Retarget: Every 3 blocks (30 minutes)
-Timestamp:           Fixed from start to finish
-Address Prefix:      fix1 (Bech32)
-Max Block Size:      1 MB
+# Allow SSH
+sudo ufw allow 22/tcp
+
+# Allow FixedCoin P2P
+sudo ufw allow 24762/tcp
+
+# Check status
+sudo ufw status
 ```
 
-## 🤝 Community & Support
+**Note:** RPC port 24761 should NOT be exposed to the internet. It's for local use only.
 
-- **Website**: https://fixedcoin.org (coming soon)
-- **Explorer**: https://explorer.fixedcoin.org (coming soon)
-- **Discord**: https://discord.gg/fixedcoin (coming soon)
-- **Twitter**: https://twitter.com/fixedcoin (coming soon)
-- **GitHub**: https://github.com/VOTRE_USERNAME/fixedcoin
+## 🐛 Troubleshooting
 
-## ⚠️ Important Notice
+### Node won't start
 
-FixedCoin is an experimental cryptocurrency project focused on absolute scarcity and immutability. The ultra-limited supply (10,000 FXC) and unique economic model based on transaction fees post-distribution create unprecedented dynamics.
+```bash
+# Check service status
+sudo systemctl status fixedcoind
+
+# View error logs
+sudo journalctl -u fixedcoind -n 50
+
+# Check debug.log
+tail -f /var/fixedcoin/data/debug.log
+```
+
+### No connections to network
+
+```bash
+# Verify configuration
+cat /var/fixedcoin/data/fixedcoin.conf
+
+# Test node connectivity
+ping node1.fixedcoin.org
+ping node2.fixedcoin.org
+
+# Manually add nodes
+fixedcoin-cli -datadir=/var/fixedcoin/data addnode "node1.fixedcoin.org:24762" "add"
+fixedcoin-cli -datadir=/var/fixedcoin/data addnode "node2.fixedcoin.org:24762" "add"
+```
+
+### Wallet issues
+
+```bash
+# List loaded wallets
+fixedcoin-cli -datadir=/var/fixedcoin/data listwallets
+
+# Load wallet manually
+fixedcoin-cli -datadir=/var/fixedcoin/data loadwallet "miningcore"
+
+# Get wallet info
+fixedcoin-cli -datadir=/var/fixedcoin/data getwalletinfo
+```
+
+### Blockchain sync stuck
+
+```bash
+# Check current block
+fixedcoin-cli -datadir=/var/fixedcoin/data getblockcount
+
+# Check peer blocks
+fixedcoin-cli -datadir=/var/fixedcoin/data getpeerinfo | grep -i "synced_blocks"
+
+# Restart daemon
+sudo systemctl restart fixedcoind
+```
+
+## 📚 Additional Resources
+
+- **Source Code:** [GitHub Repository](https://github.com/Fixed-Blockchain/fixedcoin)
+- **Releases:** [Download Page](https://github.com/Fixed-Blockchain/fixedcoin/releases)
+- **Block Explorer:** Coming soon
+- **Website:** Coming soon
+- **Discord:** Coming soon
+
+## ⚠️ Disclaimer
+
+FixedCoin is an experimental cryptocurrency project. The ultra-limited supply (10,000 FXC) and unique economic model create an unprecedented experiment in digital scarcity.
+
+**Key Risks:**
+- Experimental tokenomics with no prior precedent
+- Repository will be archived - no future development or bug fixes
+- Network security post-distribution depends entirely on transaction fees
+- Extremely low supply may lead to high price volatility
+- No central authority, foundation, or ongoing support
 
 **This is not financial advice. Do Your Own Research (DYOR).**
 
-Key risks:
-- Experimental tokenomics model
-- No central development after block 1
-- Network security depends on transaction fees post-distribution
-- Extremely low supply may lead to high volatility
+Only participate with funds you can afford to lose entirely.
 
 ## 📜 License
 
@@ -403,17 +578,19 @@ FixedCoin is released under the MIT License. See [LICENSE](LICENSE) for details.
 
 ## 🔒 The Fixed Promise
 
-Once block 1 is mined:
-- ✅ Repository will be **archived**
-- ✅ No code changes will ever be made
-- ✅ No governance or voting mechanisms
-- ✅ No ICO, no venture capital, no foundation
-- ✅ Pure, immutable, fixed
+Once block 1 is mined, this repository will be **permanently archived**:
+
+- ✅ No code changes
+- ✅ No governance
+- ✅ No updates
+- ✅ No ICO or VC funding
+- ✅ No foundation
+- ✅ Pure immutability
 
 **Everything is Fixed. Forever.**
 
 ---
 
-**Join the Fixed Revolution** 🚀
+**Built on Bitcoin's proven technology. Secured by SHA-256. Limited to 10,000 coins.**
 
-*For integrity verification, always check the SHA256 hash of downloaded files against official releases.*
+*Always verify file integrity by checking SHA256 hashes before running any binaries.*
