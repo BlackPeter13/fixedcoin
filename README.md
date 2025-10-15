@@ -1,9 +1,12 @@
 # FixedCoin 🔒
 
-![FixedCoin](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![FixedCoin Logo](https://github.com/Fixed-Blockchain/fixedcoin/blob/main/fix.png)
+
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Supply](https://img.shields.io/badge/supply-10%2C000%20FXC-orange.svg)
 ![Algorithm](https://img.shields.io/badge/algorithm-SHA--256-blue.svg)
+![Status](https://img.shields.io/badge/status-FIXED-red.svg)
 
 > **"Once mined at block 1, this repository will be archived. Everything is Fixed."**
 
@@ -47,23 +50,45 @@ FixedCoin is an ultra-rare cryptocurrency with a total supply of only **10,000 F
 - Hash TX: 28334
 - Hash Block: 28335
 
+**Block Explorer:**
+- https://explorer.fixedcoin.org
+
 ## 📥 Downloads
 
-### Latest Release: v1.0.0
+### Latest Release: V Final
 
-Download from [GitHub Releases](https://github.com/Fixed-Blockchain/fixedcoin/releases)
+Download from [GitHub Releases](https://github.com/Fixed-Blockchain/fixedcoin/releases/tag/FIX)
 
-**Windows:**
-- [fixedcoin-1.0.0-win64.zip](https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-1.0.0-win64.zip)
+#### Windows Binaries
 
-**Linux:**
-- [fixedcoin-1.0.0-x86_64-linux-gnu.tar.gz](https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-1.0.0-x86_64-linux-gnu.tar.gz)
+**GUI Wallet (Recommended for Desktop)**
+- [fixedcoin-qt-windows.zip](https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-qt-windows.zip) (21.4 MB)
+- SHA256: `aee35420db0a2fb6496ac5b6c1eab933910bd3ecf61cdf737366a1c8e087e3ff`
+
+**Daemon (For Servers)**
+- [fixedcoin-daemon-windows.zip](https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-daemon-windows.zip) (6.46 MB)
+- SHA256: `f5d52e17e4c0a5c861f31d984b97a9a4a77d21d5b2585dcb37d50c771a30b8a6`
+
+#### Linux Binaries
+
+**GUI Wallet (Recommended for Desktop)**
+- [fixedcoin-qt-linux.tar.gz](https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-qt-linux.tar.gz) (21.3 MB)
+- SHA256: `aee079bb693289a5a510d31b4367766cdffc6ae74965c93dd232534c1ec14a56`
+
+**Daemon (For Servers)**
+- [fixedcoin-daemon-linux.tar.gz](https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-daemon-linux.tar.gz) (6.37 MB)
+- SHA256: `b9534576476ba008dcb2c71d2b254dfcf30a7e422c01a03339552df36d15593c`
+
+#### Source Code
+
+- [Source code (zip)](https://github.com/Fixed-Blockchain/fixedcoin/archive/refs/tags/FIX.zip)
+- [Source code (tar.gz)](https://github.com/Fixed-Blockchain/fixedcoin/archive/refs/tags/FIX.tar.gz)
 
 ## 🚀 Quick Start Guide
 
 ### Windows Installation
 
-1. Download `fixedcoin-1.0.0-win64.zip`
+1. Download [fixedcoin-qt-windows.zip](https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-qt-windows.zip)
 2. Extract the archive to a folder (e.g., `C:\FixedCoin`)
 3. Run `fixedcoin-qt.exe` to start the wallet
 4. Wait for blockchain synchronization
@@ -71,19 +96,16 @@ Download from [GitHub Releases](https://github.com/Fixed-Blockchain/fixedcoin/re
 ### Linux Desktop Installation
 
 ```bash
-# Download
-wget https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-1.0.0-x86_64-linux-gnu.tar.gz
+# Download GUI wallet
+wget https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-qt-linux.tar.gz
 
 # Extract
-tar -xzf fixedcoin-1.0.0-x86_64-linux-gnu.tar.gz
-
-# Navigate to bin directory
-cd fixedcoin-1.0.0/bin
+tar -xzf fixedcoin-qt-linux.tar.gz
 
 # Run GUI wallet
 ./fixedcoin-qt
 
-# Or run daemon
+# Or run daemon in background
 ./fixedcoind -daemon
 ```
 
@@ -129,11 +151,11 @@ drwxr-xr-x downloads
 ```bash
 cd /var/fixedcoin/downloads
 
-# Download daemon
-wget "https://dl.walletbuilders.com/download?customer=ded2af3dffa79fe529a518714b7dea9488044bec748cb4ea4a&filename=fixedcoin-daemon-linux.tar.gz" -O fixedcoin-daemon-linux.tar.gz
+# Download daemon (6.37 MB)
+wget https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-daemon-linux.tar.gz
 
-# Download tools (CLI, TX utilities)
-wget "https://dl.walletbuilders.com/download?customer=ded2af3dffa79fe529a518714b7dea9488044bec748cb4ea4a&filename=fixedcoin-qt-linux.tar.gz" -O fixedcoin-qt-linux.tar.gz
+# Download tools (CLI, TX utilities) (21.3 MB)
+wget https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-qt-linux.tar.gz
 ```
 
 ### Step 3: Extract Files
@@ -149,10 +171,10 @@ ls -lh
 ```
 
 You should see:
-- `fixedcoind` (14M)
-- `fixedcoin-cli` (1.2M)
-- `fixedcoin-tx` (2.8M)
-- `fixedcoin-qt` (40M)
+- `fixedcoind` (~14M) - Daemon
+- `fixedcoin-cli` (~1.2M) - CLI tools
+- `fixedcoin-tx` (~2.8M) - Transaction tools
+- `fixedcoin-qt` (~40M) - GUI wallet
 
 ### Step 4: Install Binaries
 
@@ -187,8 +209,8 @@ Paste the following configuration:
 
 ```ini
 # RPC Settings
-rpcuser=user159
-rpcpassword=pass159
+rpcuser=your_username
+rpcpassword=your_secure_password
 rpcbind=127.0.0.1
 rpcallowip=127.0.0.1
 rpcport=24761
@@ -301,9 +323,6 @@ Save with `Ctrl + X`, then `Y`, then `Enter`.
 ### Step 8: Enable and Start Service
 
 ```bash
-# Add safe directory (if running as root)
-git config --global --add safe.directory /var/fixedcoin/fixedcoin-repo
-
 # Reload systemd
 sudo systemctl daemon-reload
 
@@ -437,11 +456,7 @@ fixedcoin-cli -datadir=/var/fixedcoin/data getmininginfo
 
 ### Pool Mining
 
-Configure any SHA-256 compatible mining software (cgminer, bfgminer, etc.) with:
-- **Pool URL:** Contact pool operator for stratum URL
-- **Port:** Contact pool operator
-- **Username:** Your FixedCoin address
-- **Password:** x
+Configure any SHA-256 compatible mining software (cgminer, bfgminer, etc.) to point to a FixedCoin mining pool when available.
 
 ## 📊 Supply Schedule
 
@@ -552,10 +567,8 @@ sudo systemctl restart fixedcoind
 ## 📚 Additional Resources
 
 - **Source Code:** [GitHub Repository](https://github.com/Fixed-Blockchain/fixedcoin)
-- **Releases:** [Download Page](https://github.com/Fixed-Blockchain/fixedcoin/releases)
-- **Block Explorer:** Coming soon
-- **Website:** Coming soon
-- **Discord:** Coming soon
+- **Releases:** [Download Page](https://github.com/Fixed-Blockchain/fixedcoin/releases/tag/FIX)
+- **Block Explorer:** [explorer.fixedcoin.org](https://explorer.fixedcoin.org)
 
 ## ⚠️ Disclaimer
 
