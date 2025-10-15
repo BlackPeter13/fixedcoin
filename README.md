@@ -58,7 +58,7 @@ TOTAL: 10,000 FXC
 
 ### Windows
 
-1. Download `fixedcoin-1.0.0-win64.zip` from [releases](https://github.com/VOTRE_USERNAME/fixedcoin/releases)
+1. Download `fixedcoin-1.0.0-win64.zip` from [releases](https://github.com/Fixed-Blockchain/fixedcoin/releases/tag/FIX)
 2. Extract the archive
 3. Run `fixedcoin-qt.exe`
 4. Wait for blockchain synchronization
