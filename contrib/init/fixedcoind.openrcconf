@@ -1,0 +1,33 @@
+# /etc/conf.d/fixedcoind: config file for /etc/init.d/fixedcoind
+
+# Config file location
+#FIXEDCOIND_CONFIGFILE="/etc/fixedcoin/fixedcoin.conf"
+
+# What directory to write pidfile to?  (created and owned by $FIXEDCOIND_USER)
+#FIXEDCOIND_PIDDIR="/var/run/fixedcoind"
+
+# What filename to give the pidfile
+#FIXEDCOIND_PIDFILE="${FIXEDCOIND_PIDDIR}/fixedcoind.pid"
+
+# Where to write fixedcoind data (be mindful that the blockchain is large)
+#FIXEDCOIND_DATADIR="/var/lib/fixedcoind"
+
+# User and group to own fixedcoind process
+#FIXEDCOIND_USER="fixedcoin"
+#FIXEDCOIND_GROUP="fixedcoin"
+
+# Path to fixedcoind executable
+#FIXEDCOIND_BIN="/usr/bin/fixedcoind"
+
+# Nice value to run fixedcoind under
+#FIXEDCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+#FIXEDCOIND_OPTS=""
+
+# The timeout in seconds OpenRC will wait for fixedcoind to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+FIXEDCOIND_SIGTERM_TIMEOUT=600

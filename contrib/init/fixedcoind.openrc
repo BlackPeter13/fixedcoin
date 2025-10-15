@@ -1,0 +1,93 @@
+#!/sbin/openrc-run
+
+# backward compatibility for existing gentoo layout 
+#
+if [ -d "/var/lib/fixedcoin/.fixedcoin" ]; then
+	FIXEDCOIND_DEFAULT_DATADIR="/var/lib/fixedcoin/.fixedcoin"
+else
+	FIXEDCOIND_DEFAULT_DATADIR="/var/lib/fixedcoind"
+fi
+
+FIXEDCOIND_CONFIGFILE=${FIXEDCOIND_CONFIGFILE:-/etc/fixedcoin/fixedcoin.conf}
+FIXEDCOIND_PIDDIR=${FIXEDCOIND_PIDDIR:-/var/run/fixedcoind}
+FIXEDCOIND_PIDFILE=${FIXEDCOIND_PIDFILE:-${FIXEDCOIND_PIDDIR}/fixedcoind.pid}
+FIXEDCOIND_DATADIR=${FIXEDCOIND_DATADIR:-${FIXEDCOIND_DEFAULT_DATADIR}}
+FIXEDCOIND_USER=${FIXEDCOIND_USER:-${FIXEDCOIN_USER:-fixedcoin}}
+FIXEDCOIND_GROUP=${FIXEDCOIND_GROUP:-fixedcoin}
+FIXEDCOIND_BIN=${FIXEDCOIND_BIN:-/usr/bin/fixedcoind}
+FIXEDCOIND_NICE=${FIXEDCOIND_NICE:-${NICELEVEL:-0}}
+FIXEDCOIND_OPTS="${FIXEDCOIND_OPTS:-${FIXEDCOIN_OPTS}}"
+
+name="FixedCoin Core Daemon"
+description="FixedCoin cryptocurrency P2P network daemon"
+
+command="/usr/bin/fixedcoind"
+command_args="-pid=\"${FIXEDCOIND_PIDFILE}\" \
+		-conf=\"${FIXEDCOIND_CONFIGFILE}\" \
+		-datadir=\"${FIXEDCOIND_DATADIR}\" \
+		-daemon \
+		${FIXEDCOIND_OPTS}"
+
+required_files="${FIXEDCOIND_CONFIGFILE}"
+start_stop_daemon_args="-u ${FIXEDCOIND_USER} \
+			-N ${FIXEDCOIND_NICE} -w 2000"
+pidfile="${FIXEDCOIND_PIDFILE}"
+
+# The retry schedule to use when stopping the daemon. Could be either
+# a timeout in seconds or multiple signal/timeout pairs (like
+# "SIGKILL/180 SIGTERM/300")
+retry="${FIXEDCOIND_SIGTERM_TIMEOUT}"
+
+depend() {
+	need localmount net
+}
+
+# verify
+# 1) that the datadir exists and is writable (or create it)
+# 2) that a directory for the pid exists and is writable
+# 3) ownership and permissions on the config file
+start_pre() {
+	checkpath \
+	-d \
+	--mode 0750 \
+	--owner "${FIXEDCOIND_USER}:${FIXEDCOIND_GROUP}" \
+	"${FIXEDCOIND_DATADIR}"
+
+	checkpath \
+	-d \
+	--mode 0755 \
+	--owner "${FIXEDCOIND_USER}:${FIXEDCOIND_GROUP}" \
+	"${FIXEDCOIND_PIDDIR}"
+
+	checkpath -f \
+	-o "${FIXEDCOIND_USER}:${FIXEDCOIND_GROUP}" \
+	-m 0660 \
+	"${FIXEDCOIND_CONFIGFILE}"
+
+	checkconfig || return 1
+}
+
+checkconfig()
+{
+	if grep -qs '^rpcuser=' "${FIXEDCOIND_CONFIGFILE}" && \
+		! grep -qs '^rpcpassword=' "${FIXEDCOIND_CONFIGFILE}" ; then
+		eerror ""
+		eerror "ERROR: You must set a secure rpcpassword to run fixedcoind."
+		eerror "The setting must appear in ${FIXEDCOIND_CONFIGFILE}"
+		eerror ""
+		eerror "This password is security critical to securing wallets "
+		eerror "and must not be the same as the rpcuser setting."
+		eerror "You can generate a suitable random password using the following "
+		eerror "command from the shell:"
+		eerror ""
+		eerror "bash -c 'tr -dc a-zA-Z0-9 < /dev/urandom | head -c32 && echo'"
+		eerror ""
+		eerror "It is recommended that you also set alertnotify so you are "
+		eerror "notified of problems:"
+		eerror ""
+		eerror "ie: alertnotify=echo %%s | mail -s \"FixedCoin Alert\"" \
+			"admin@foo.com"
+		eerror ""
+		return 1
+	fi
+}

@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+#
+#  fixedcoind The fixedcoin core server.
+#
+#
+# chkconfig: 345 80 20
+# description: fixedcoind
+# processname: fixedcoind
+#
+
+# Source function library.
+. /etc/init.d/functions
+
+# you can override defaults in /etc/sysconfig/fixedcoind, see below
+if [ -f /etc/sysconfig/fixedcoind ]; then
+        . /etc/sysconfig/fixedcoind
+fi
+
+RETVAL=0
+
+prog=fixedcoind
+# you can override the lockfile via FIXEDCOIND_LOCKFILE in /etc/sysconfig/fixedcoind
+lockfile=${FIXEDCOIND_LOCKFILE-/var/lock/subsys/fixedcoind}
+
+# fixedcoind defaults to /usr/bin/fixedcoind, override with FIXEDCOIND_BIN
+fixedcoind=${FIXEDCOIND_BIN-/usr/bin/fixedcoind}
+
+# fixedcoind opts default to -disablewallet, override with FIXEDCOIND_OPTS
+fixedcoind_opts=${FIXEDCOIND_OPTS--disablewallet}
+
+start() {
+    echo -n $"Starting $prog: "
+    daemon $DAEMONOPTS $fixedcoind $fixedcoind_opts
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && touch $lockfile
+    return $RETVAL
+}
+
+stop() {
+    echo -n $"Stopping $prog: "
+    killproc $prog -t600
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && rm -f $lockfile
+    return $RETVAL
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status $prog
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo "Usage: service $prog {start|stop|status|restart}"
+        exit 1
+        ;;
+esac

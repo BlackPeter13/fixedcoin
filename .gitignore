@@ -1,0 +1,152 @@
+# Compiled Object files
+*.o
+*.obj
+*.lo
+*.slo
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+fixedcoind
+fixedcoin-cli
+fixedcoin-tx
+fixedcoin-qt
+test_fixedcoin
+
+# Build directories
+build/
+bin/
+obj/
+release/
+debug/
+.libs/
+Makefile
+Makefile.in
+
+# Qt
+*.qm
+Makefile*
+object_script.*.Release
+object_script.*.Debug
+*-build-*
+*.pro.user
+*.pro.user.*
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+
+# Autotools
+.deps/
+.dirstamp
+*.trs
+*.log
+autom4te.cache/
+aclocal.m4
+compile
+config.guess
+config.sub
+configure
+depcomp
+install-sh
+ltmain.sh
+m4/libtool.m4
+m4/ltoptions.m4
+m4/ltsugar.m4
+m4/ltversion.m4
+m4/lt~obsolete.m4
+missing
+test-driver
+config.status
+libtool
+stamp-h1
+
+# Blockchain data
+/blocks/
+/chainstate/
+/indexes/
+/database/
+*.dat
+*.log
+!contrib/
+
+# Wallet
+wallet.dat
+*wallet*.dat
+peers.dat
+banlist.dat
+fee_estimates.dat
+mempool.dat
+
+# Config files (contiennent des infos sensibles)
+fixedcoin.conf
+.cookie
+
+# Debug files
+debug.log
+db.log
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+.directory
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Coverage
+*.gcov
+*.gcda
+*.gcno
+coverage/
+*.coverage
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.egg-info/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Distribution / packaging
+dist/
+*.dmg
+*.zip
+*.tar.gz
+*.deb
+*.rpm
