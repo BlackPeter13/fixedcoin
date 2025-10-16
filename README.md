@@ -4,7 +4,7 @@
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
-![Supply](https://img.shields.io/badge/supply-~10%2C000%20FXC-orange.svg)
+![Supply](https://img.shields.io/badge/supply-~10%2C000%20FIX-orange.svg)
 ![Algorithm](https://img.shields.io/badge/algorithm-SHA--256-blue.svg)
 ![Status](https://img.shields.io/badge/status-FIXED-red.svg)
 
@@ -37,10 +37,10 @@
 
 ## 🔐 What is FixedCoin?
 
-FixedCoin is an ultra-rare cryptocurrency with a total supply of only **~10,000 FXC**. Built on Bitcoin's proven codebase and secured by SHA-256 mining, FixedCoin represents the ultimate experiment in digital scarcity and immutability.
+FixedCoin is an ultra-rare cryptocurrency with a total supply of only **~10,000 FIX**. Built on Bitcoin's proven codebase and secured by SHA-256 mining, FixedCoin represents the ultimate experiment in digital scarcity and immutability.
 
 **The Fixed Concept:**
-- **1,600 FXC premine at block 1** for initial distribution and development
+- **1,600 FIX premine at block 1** for initial distribution and development
 - Repository will be **permanently archived** after block 1
 - No future code changes or governance
 - Pure, immutable, fixed forever
@@ -51,8 +51,8 @@ FixedCoin represents a radical experiment in cryptocurrency design:
 
 - ✅ **No Governance Drama** - No debates, no forks, no community splits
 - ✅ **No Protocol Upgrades** - What you see is what you get, forever
-- ✅ **No Inflation Surprises** - ~10,000 FXC. That's it. Forever.
-- ✅ **Fair Launch with Premine** - 1,600 FXC premine (16% of supply) for ecosystem development
+- ✅ **No Inflation Surprises** - ~10,000 FIX. That's it. Forever.
+- ✅ **Fair Launch with Premine** - 1,600 FIX premine (16% of supply) for ecosystem development
 - ✅ **No Uncertainty** - The protocol is completely predictable
 - ✅ **Ultimate Scarcity** - 2,100x rarer than Bitcoin
 
@@ -62,10 +62,10 @@ FixedCoin represents a radical experiment in cryptocurrency design:
 
 | Parameter | Value |
 |-----------|-------|
-| **Total Supply** | ~10,000 FXC |
-| **Genesis Block** | 1 FXC (Block 0) |
-| **Premine Block** | 1,600 FXC (Block 1) |
-| **Block Reward** | 1 FXC (initial, from block 2) |
+| **Total Supply** | ~10,000 FIX |
+| **Genesis Block** | 1 FIX (Block 0) |
+| **Premine Block** | 1,600 FIX (Block 1) |
+| **Block Reward** | 1 FIX (initial, from block 2) |
 | **Halving Interval** | 4,200 blocks |
 | **Last Reward Block** | 113,400 |
 | **Distribution Period** | ~2 years |
@@ -469,7 +469,7 @@ fixedcoin-cli -datadir=/var/fixedcoin/data getnewaddress
 # List recent transactions
 fixedcoin-cli -datadir=/var/fixedcoin/data listtransactions
 
-# Send FXC (replace with actual values)
+# Send FIX (replace with actual values)
 fixedcoin-cli -datadir=/var/fixedcoin/data sendtoaddress "fix1..." 1.0
 
 # Get transaction details
@@ -509,23 +509,23 @@ Configure any SHA-256 compatible mining software (cgminer, bfgminer, etc.) to po
 
 ## 📊 Supply Schedule
 
-| Block Range | Reward per Block | Blocks | Total FXC | Cumulative |
+| Block Range | Reward per Block | Blocks | Total FIX | Cumulative |
 |-------------|------------------|--------|-----------|------------|
-| 0 (Genesis) | 1.0 FXC | 1 | 1 | 1 |
-| 1 (Premine) | 1,600.0 FXC | 1 | 1,600 | 1,601 |
-| 2 - 4,199 | 1.0 FXC | 4,198 | 4,198 | 5,799 |
-| 4,200 - 8,399 | 0.5 FXC | 4,200 | 2,100 | 7,899 |
-| 8,400 - 12,599 | 0.25 FXC | 4,200 | 1,050 | 8,949 |
-| 12,600 - 16,799 | 0.125 FXC | 4,200 | 525 | 9,474 |
-| 16,800 - 20,999 | 0.0625 FXC | 4,200 | 262.5 | 9,736.5 |
-| 21,000 - 25,199 | 0.03125 FXC | 4,200 | 131.25 | 9,867.75 |
-| 25,200 - 29,399 | 0.015625 FXC | 4,200 | 65.625 | 9,933.375 |
+| 0 (Genesis) | 1.0 FIX | 1 | 1 | 1 |
+| 1 (Premine) | 1,600.0 FIX | 1 | 1,600 | 1,601 |
+| 2 - 4,199 | 1.0 FIX | 4,198 | 4,198 | 5,799 |
+| 4,200 - 8,399 | 0.5 FIX | 4,200 | 2,100 | 7,899 |
+| 8,400 - 12,599 | 0.25 FIX | 4,200 | 1,050 | 8,949 |
+| 12,600 - 16,799 | 0.125 FIX | 4,200 | 525 | 9,474 |
+| 16,800 - 20,999 | 0.0625 FIX | 4,200 | 262.5 | 9,736.5 |
+| 21,000 - 25,199 | 0.03125 FIX | 4,200 | 131.25 | 9,867.75 |
+| 25,200 - 29,399 | 0.015625 FIX | 4,200 | 65.625 | 9,933.375 |
 | ... | (continues halving) | ... | ... | ... |
-| 113,400+ | 0 FXC | ∞ | 0 | ~10,000 |
-| **TOTAL** | - | - | **~10,000 FXC** | - |
+| 113,400+ | 0 FIX | ∞ | 0 | ~10,000 |
+| **TOTAL** | - | - | **~10,000 FIX** | - |
 
 **Premine Details:**
-- **Block 1:** 1,600 FXC (16% of total supply)
+- **Block 1:** 1,600 FIX (16% of total supply)
 - **Purpose:** Ecosystem development, initial liquidity, community incentives
 - **Mining starts:** Block 2 onwards with standard halving schedule
 
@@ -624,7 +624,7 @@ sudo systemctl restart fixedcoind
 ## ❓ Frequently Asked Questions
 
 ### What is the premine for?
-The 1,600 FXC premine (16% of total supply) at block 1 provides initial liquidity for exchanges, funds community development, incentivizes early adopters, and ensures ecosystem sustainability. This is a transparent, one-time allocation locked in the blockchain forever.
+The 1,600 FIX premine (16% of total supply) at block 1 provides initial liquidity for exchanges, funds community development, incentivizes early adopters, and ensures ecosystem sustainability. This is a transparent, one-time allocation locked in the blockchain forever.
 
 ### What happens after all coins are mined?
 After block 113,400 (~2 years), miners are compensated solely through transaction fees. This ensures long-term network security without inflation.
@@ -643,7 +643,7 @@ Build tools, wallets, services, and applications. The protocol is fixed, but the
 
 ### What makes FixedCoin different from Bitcoin?
 - **Ultra-rare supply:** ~10,000 vs 21,000,000
-- **Premine:** 1,600 FXC for ecosystem development
+- **Premine:** 1,600 FIX for ecosystem development
 - **Absolute immutability:** No updates after archive
 - **Faster distribution:** ~2 years vs ~140 years
 - **Community-driven:** No foundation or central authority
@@ -660,7 +660,7 @@ FixedCoin uses Bitcoin's proven codebase and SHA-256 algorithm. However, as with
 
 ## ⚠️ Disclaimer
 
-FixedCoin is an experimental cryptocurrency project. The ultra-limited supply (~10,000 FXC) including a 1,600 FXC premine and unique economic model create an unprecedented experiment in digital scarcity.
+FixedCoin is an experimental cryptocurrency project. The ultra-limited supply (~10,000 FIX) including a 1,600 FIX premine and unique economic model create an unprecedented experiment in digital scarcity.
 
 **Key Risks:**
 - 16% premine may affect initial distribution and decentralization
@@ -689,9 +689,9 @@ Once block 1 is mined, this repository will be **permanently archived**:
 - ✅ No foundation
 - ✅ Pure immutability
 
-**Block 0:** Genesis (1 FXC)  
-**Block 1:** Premine (1,600 FXC) - Then archived forever  
-**Block 2+:** Mining begins (8,398 FXC over ~2 years)
+**Block 0:** Genesis (1 FIX)  
+**Block 1:** Premine (1,600 FIX) - Then archived forever  
+**Block 2+:** Mining begins (8,398 FIX over ~2 years)
 
 **Everything is Fixed. Forever.**
 
