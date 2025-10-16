@@ -268,10 +268,10 @@ txindex=1
 daemon=1
 
 # ZMQ Notifications
-zmqpubrawblock=tcp://127.0.0.1:28332
-zmqpubrawtx=tcp://127.0.0.1:28333
-zmqpubhashtx=tcp://127.0.0.1:28334
-zmqpubhashblock=tcp://127.0.0.1:28335
+zmqpubrawblock=tcp://127.0.0.1:24763
+zmqpubrawtx=tcp://127.0.0.1:24764
+zmqpubhashtx=tcp://127.0.0.1:24765
+zmqpubhashblock=tcp://127.0.0.1:24766
 
 # Wallet Configuration
 wallet=miningcore
