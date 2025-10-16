@@ -4,7 +4,7 @@
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
-![Supply](https://img.shields.io/badge/supply-10%2C000%20FXC-orange.svg)
+![Supply](https://img.shields.io/badge/supply-~8%2C401%20FXC-orange.svg)
 ![Algorithm](https://img.shields.io/badge/algorithm-SHA--256-blue.svg)
 ![Status](https://img.shields.io/badge/status-FIXED-red.svg)
 
@@ -37,7 +37,7 @@
 
 ## 🔐 What is FixedCoin?
 
-FixedCoin is an ultra-rare cryptocurrency with a total supply of only **10,000 FXC**. Built on Bitcoin's proven codebase and secured by SHA-256 mining, FixedCoin represents the ultimate experiment in digital scarcity and immutability.
+FixedCoin is an ultra-rare cryptocurrency with a total supply of only **~8,401 FXC**. Built on Bitcoin's proven codebase and secured by SHA-256 mining, FixedCoin represents the ultimate experiment in digital scarcity and immutability.
 
 **The Fixed Concept:**
 - Repository will be **permanently archived** after block 1
@@ -50,10 +50,10 @@ FixedCoin represents a radical experiment in cryptocurrency design:
 
 - ✅ **No Governance Drama** - No debates, no forks, no community splits
 - ✅ **No Protocol Upgrades** - What you see is what you get, forever
-- ✅ **No Inflation Surprises** - 10,000 FXC. That's it. Forever.
+- ✅ **No Inflation Surprises** - ~8,401 FXC. That's it. Forever.
 - ✅ **No Foundation** - Pure community-driven from day one
 - ✅ **No Uncertainty** - The protocol is completely predictable
-- ✅ **Ultimate Scarcity** - 2,100x rarer than Bitcoin
+- ✅ **Ultimate Scarcity** - 2,500x rarer than Bitcoin
 
 **The only cryptocurrency that will never change.**
 
@@ -61,8 +61,8 @@ FixedCoin represents a radical experiment in cryptocurrency design:
 
 | Parameter | Value |
 |-----------|-------|
-| **Total Supply** | 10,000 FXC |
-| **Premine** | 1,600 FXC (16%) |
+| **Total Supply** | ~8,401 FXC |
+| **Genesis Block** | 1 FXC (Block 0) |
 | **Block Reward** | 1 FXC (initial) |
 | **Halving Interval** | 4,200 blocks |
 | **Last Reward Block** | 113,400 |
@@ -83,10 +83,10 @@ FixedCoin represents a radical experiment in cryptocurrency design:
 - node2.fixedcoin.org:24762
 
 **ZMQ Ports:**
-- Raw Block: 28332
-- Raw TX: 28333
-- Hash TX: 28334
-- Hash Block: 28335
+- Raw Block: 24763
+- Raw TX: 24764
+- Hash TX: 24765
+- Hash Block: 24766
 
 **Block Explorer:**
 - https://explorer.fixedcoin.org
@@ -484,7 +484,7 @@ Add to `/var/fixedcoin/data/fixedcoin.conf`:
 ```ini
 # Mining Configuration
 gen=1
-genproclimit=1
+genproclimit=4
 mineraddress=YOUR_FIXEDCOIN_ADDRESS
 ```
 
@@ -508,15 +508,15 @@ Configure any SHA-256 compatible mining software (cgminer, bfgminer, etc.) to po
 
 | Block Range | Reward per Block | Total FXC | Cumulative |
 |-------------|------------------|-----------|------------|
-| 0 - 4,199 | 1.0 FXC | 4,200 | 4,200 |
+| 0 (Genesis) | 1.0 FXC | 1 | 1 |
+| 1 - 4,199 | 1.0 FXC | 4,199 | 4,200 |
 | 4,200 - 8,399 | 0.5 FXC | 2,100 | 6,300 |
 | 8,400 - 12,599 | 0.25 FXC | 1,050 | 7,350 |
 | 12,600 - 16,799 | 0.125 FXC | 525 | 7,875 |
 | 16,800 - 20,999 | 0.0625 FXC | 262.5 | 8,137.5 |
 | ... | (continues halving) | ... | ... |
-| 113,400+ | 0 FXC | 0 | ~8,400 |
-| **Premine** | - | 1,600 | - |
-| **TOTAL** | - | **10,000 FXC** | - |
+| 113,400+ | 0 FXC | 0 | ~8,401 |
+| **TOTAL** | - | **~8,401 FXC** | - |
 
 After block 113,400 (~2 years), no new coins are created. Network security is maintained through transaction fees.
 
@@ -618,8 +618,8 @@ After block 113,400 (~2 years), miners are compensated solely through transactio
 ### Can the code be updated later?
 No. The repository will be archived after block 1. No updates, no bug fixes, no changes. Ever. This is by design.
 
-### Why only 10,000 coins?
-To create the ultimate experiment in digital scarcity. FixedCoin is 2,100x rarer than Bitcoin, making it one of the scarcest cryptocurrencies ever created.
+### Why only ~8,401 coins?
+To create the ultimate experiment in digital scarcity. FixedCoin is 2,500x rarer than Bitcoin, making it one of the scarcest cryptocurrencies ever created.
 
 ### Is this a joke/meme coin?
 No. FixedCoin is a serious experiment in protocol immutability and extreme scarcity. It's built on Bitcoin's proven codebase with SHA-256 security.
@@ -628,7 +628,7 @@ No. FixedCoin is a serious experiment in protocol immutability and extreme scarc
 Build tools, wallets, services, and applications. The protocol is fixed, but the ecosystem is yours to create. Everything must be built by the community.
 
 ### What makes FixedCoin different from Bitcoin?
-- **Ultra-rare supply:** 10,000 vs 21,000,000
+- **Ultra-rare supply:** ~8,401 vs 21,000,000
 - **Absolute immutability:** No updates after archive
 - **Faster distribution:** ~2 years vs ~140 years
 - **Community-driven:** No foundation or central authority
@@ -645,7 +645,7 @@ FixedCoin uses Bitcoin's proven codebase and SHA-256 algorithm. However, as with
 
 ## ⚠️ Disclaimer
 
-FixedCoin is an experimental cryptocurrency project. The ultra-limited supply (10,000 FXC) and unique economic model create an unprecedented experiment in digital scarcity.
+FixedCoin is an experimental cryptocurrency project. The ultra-limited supply (~8,401 FXC) and unique economic model create an unprecedented experiment in digital scarcity.
 
 **Key Risks:**
 - Experimental tokenomics with no prior precedent
@@ -677,6 +677,6 @@ Once block 1 is mined, this repository will be **permanently archived**:
 
 ---
 
-**Built on Bitcoin's proven technology. Secured by SHA-256. Limited to 10,000 coins.**
+**Built on Bitcoin's proven technology. Secured by SHA-256. Limited to ~8,401 coins.**
 
 *Always verify file integrity by checking SHA256 hashes before running any binaries.*
