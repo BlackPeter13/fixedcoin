@@ -8,7 +8,32 @@
 ![Algorithm](https://img.shields.io/badge/algorithm-SHA--256-blue.svg)
 ![Status](https://img.shields.io/badge/status-FIXED-red.svg)
 
+**🌐 [Website](https://fixedcoin.org) | 🔍 [Explorer](https://explorer.fixedcoin.org) | 📦 [Releases](https://github.com/Fixed-Blockchain/fixedcoin/releases)**
+
 > **"Once mined at block 1, this repository will be archived. Everything is Fixed."**
+
+---
+
+## 📚 Table of Contents
+
+- [What is FixedCoin?](#-what-is-fixedcoin)
+- [Why FixedCoin?](#-why-fixedcoin)
+- [Technical Specifications](#-technical-specifications)
+- [Network](#-network)
+- [Downloads](#-downloads)
+- [Quick Start Guide](#-quick-start-guide)
+- [Ubuntu Server Setup](#️-ubuntu-server-2204-node-setup)
+- [Node Management Commands](#-node-management-commands)
+- [Mining FixedCoin](#️-mining-fixedcoin)
+- [Supply Schedule](#-supply-schedule)
+- [Security Best Practices](#-security-best-practices)
+- [Troubleshooting](#-troubleshooting)
+- [FAQ](#-frequently-asked-questions)
+- [Additional Resources](#-additional-resources)
+- [Disclaimer](#️-disclaimer)
+- [License](#-license)
+
+---
 
 ## 🔐 What is FixedCoin?
 
@@ -18,6 +43,19 @@ FixedCoin is an ultra-rare cryptocurrency with a total supply of only **10,000 F
 - Repository will be **permanently archived** after block 1
 - No future code changes or governance
 - Pure, immutable, fixed forever
+
+## 🎯 Why FixedCoin?
+
+FixedCoin represents a radical experiment in cryptocurrency design:
+
+- ✅ **No Governance Drama** - No debates, no forks, no community splits
+- ✅ **No Protocol Upgrades** - What you see is what you get, forever
+- ✅ **No Inflation Surprises** - 10,000 FXC. That's it. Forever.
+- ✅ **No Foundation** - Pure community-driven from day one
+- ✅ **No Uncertainty** - The protocol is completely predictable
+- ✅ **Ultimate Scarcity** - 2,100x rarer than Bitcoin
+
+**The only cryptocurrency that will never change.**
 
 ## 💎 Technical Specifications
 
@@ -209,8 +247,8 @@ Paste the following configuration:
 
 ```ini
 # RPC Settings
-rpcuser=your_username
-rpcpassword=your_secure_password
+rpcuser=fixedcoin_rpc_user
+rpcpassword=CHANGE_THIS_TO_SECURE_PASSWORD
 rpcbind=127.0.0.1
 rpcallowip=127.0.0.1
 rpcport=24761
@@ -239,7 +277,10 @@ zmqpubhashblock=tcp://127.0.0.1:28335
 wallet=miningcore
 ```
 
-**Important:** Change `rpcuser` and `rpcpassword` to secure values.
+**Important:** Change `rpcuser` and `rpcpassword` to secure values. You can generate a secure password with:
+```bash
+openssl rand -hex 32
+```
 
 Save with `Ctrl + X`, then `Y`, then `Enter`.
 
@@ -353,6 +394,11 @@ fixedcoin-cli -datadir=/var/fixedcoin/data getconnectioncount
 Check peer information:
 ```bash
 fixedcoin-cli -datadir=/var/fixedcoin/data getpeerinfo
+```
+
+Check if node is fully synced:
+```bash
+fixedcoin-cli -datadir=/var/fixedcoin/data getblockchaininfo | grep -E "blocks|headers"
 ```
 
 View live logs:
@@ -564,11 +610,38 @@ fixedcoin-cli -datadir=/var/fixedcoin/data getpeerinfo | grep -i "synced_blocks"
 sudo systemctl restart fixedcoind
 ```
 
+## ❓ Frequently Asked Questions
+
+### What happens after all coins are mined?
+After block 113,400 (~2 years), miners are compensated solely through transaction fees. This ensures long-term network security without inflation.
+
+### Can the code be updated later?
+No. The repository will be archived after block 1. No updates, no bug fixes, no changes. Ever. This is by design.
+
+### Why only 10,000 coins?
+To create the ultimate experiment in digital scarcity. FixedCoin is 2,100x rarer than Bitcoin, making it one of the scarcest cryptocurrencies ever created.
+
+### Is this a joke/meme coin?
+No. FixedCoin is a serious experiment in protocol immutability and extreme scarcity. It's built on Bitcoin's proven codebase with SHA-256 security.
+
+### How can I contribute?
+Build tools, wallets, services, and applications. The protocol is fixed, but the ecosystem is yours to create. Everything must be built by the community.
+
+### What makes FixedCoin different from Bitcoin?
+- **Ultra-rare supply:** 10,000 vs 21,000,000
+- **Absolute immutability:** No updates after archive
+- **Faster distribution:** ~2 years vs ~140 years
+- **Community-driven:** No foundation or central authority
+
+### Is it safe to use?
+FixedCoin uses Bitcoin's proven codebase and SHA-256 algorithm. However, as with all cryptocurrencies, use at your own risk. See the [Disclaimer](#️-disclaimer) section.
+
 ## 📚 Additional Resources
 
 - **Source Code:** [GitHub Repository](https://github.com/Fixed-Blockchain/fixedcoin)
 - **Releases:** [Download Page](https://github.com/Fixed-Blockchain/fixedcoin/releases/tag/FIX)
 - **Block Explorer:** [explorer.fixedcoin.org](https://explorer.fixedcoin.org)
+- **Website:** [fixedcoin.org](https://fixedcoin.org)
 
 ## ⚠️ Disclaimer
 
