@@ -4,7 +4,7 @@
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
-![Supply](https://img.shields.io/badge/supply-~10%2C000%20FIX-orange.svg)
+![Supply](https://img.shields.io/badge/supply-10%2C000%20FIX-orange.svg)
 ![Algorithm](https://img.shields.io/badge/algorithm-SHA--256-blue.svg)
 ![Status](https://img.shields.io/badge/status-FIXED-red.svg)
 
@@ -37,7 +37,7 @@
 
 ## 🔐 What is FixedCoin?
 
-FixedCoin is an ultra-rare cryptocurrency with a total supply of only **~10,000 FIX**. Built on Bitcoin's proven codebase and secured by SHA-256 mining, FixedCoin represents the ultimate experiment in digital scarcity and immutability.
+FixedCoin is an ultra-rare cryptocurrency with a total supply of only **10,000 FIX**. Built on Bitcoin's proven codebase and secured by SHA-256 mining, FixedCoin represents the ultimate experiment in digital scarcity and immutability.
 
 **The Fixed Concept:**
 - **1,600 FIX premine at block 1** for initial distribution and development
@@ -51,7 +51,7 @@ FixedCoin represents a radical experiment in cryptocurrency design:
 
 - ✅ **No Governance Drama** - No debates, no forks, no community splits
 - ✅ **No Protocol Upgrades** - What you see is what you get, forever
-- ✅ **No Inflation Surprises** - ~10,000 FIX. That's it. Forever.
+- ✅ **No Inflation Surprises** - 10,000 FIX. That's it. Forever.
 - ✅ **Fair Launch with Premine** - 1,600 FIX premine (16% of supply) for ecosystem development
 - ✅ **No Uncertainty** - The protocol is completely predictable
 - ✅ **Ultimate Scarcity** - 2,100x rarer than Bitcoin
@@ -62,13 +62,13 @@ FixedCoin represents a radical experiment in cryptocurrency design:
 
 | Parameter | Value |
 |-----------|-------|
-| **Total Supply** | ~10,000 FIX |
+| **Total Supply** | 10,000 FIX |
 | **Genesis Block** | 1 FIX (Block 0) |
 | **Premine Block** | 1,600 FIX (Block 1) |
 | **Block Reward** | 1 FIX (initial, from block 2) |
 | **Halving Interval** | 4,200 blocks |
 | **Last Reward Block** | 113,400 |
-| **Distribution Period** | ~2 years |
+| **Distribution Period** | 2 years |
 | **Premine Allocation** | 16% of total supply |
 | **Mining Algorithm** | SHA-256 |
 | **Block Time** | 10 minutes |
@@ -77,13 +77,13 @@ FixedCoin represents a radical experiment in cryptocurrency design:
 | **Transaction Confirmations** | 6 blocks |
 | **Address Format** | Bech32 (fix1...) |
 | **RPC Port** | 24761 |
-| **P2P Port** | 24762 |
+| **P2P Port** | 24768 |
 
 ## 🌐 Network
 
 **Official Seed Nodes:**
-- node1.fixedcoin.org:24762
-- node2.fixedcoin.org:24762
+- node1.fixedcoin.org:24768
+- node2.fixedcoin.org:24768
 
 **ZMQ Ports:**
 - Raw Block: 24763
@@ -96,29 +96,39 @@ FixedCoin represents a radical experiment in cryptocurrency design:
 
 ## 📥 Downloads
 
-### Latest Release: V Final
+### Latest Release: v25.0.0
 
 Download from [GitHub Releases](https://github.com/Fixed-Blockchain/fixedcoin/releases/tag/FIX)
 
-#### Windows Binaries
+#### Windows
 
-**GUI Wallet (Recommended for Desktop)**
-- [fixedcoin-qt-windows.zip](https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-qt-windows.zip) (21.4 MB)
-- SHA256: `aee35420db0a2fb6496ac5b6c1eab933910bd3ecf61cdf737366a1c8e087e3ff`
+**Setup Installer (Recommended)**
+- [fixedcoin-25.0.0-win64-setup.exe](https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-25.0.0-win64-setup.exe)
+- SHA256: `2633baead034c5d6a5b036951560f5a859ca8257d8a154ce63ae3e0384009e07`
 
-**Daemon (For Servers)**
-- [fixedcoin-daemon-windows.zip](https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-daemon-windows.zip) (6.46 MB)
-- SHA256: `f5d52e17e4c0a5c861f31d984b97a9a4a77d21d5b2585dcb37d50c771a30b8a6`
+**Portable Archive**
+- [fixedcoin-25.0.0-win64.zip](https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-25.0.0-win64.zip)
+- SHA256: `4ad54f7d9f509321f80d7b13fecd4f355db7aa6edc82a9c533dde358f2811f97`
 
-#### Linux Binaries
+#### macOS
 
-**GUI Wallet (Recommended for Desktop)**
-- [fixedcoin-qt-linux.tar.gz](https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-qt-linux.tar.gz) (21.3 MB)
-- SHA256: `aee079bb693289a5a510d31b4367766cdffc6ae74965c93dd232534c1ec14a56`
+**Disk Image (Recommended)**
+- [fixedcoin-25.0.0-apple-darwin-setup.dmg](https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-25.0.0-apple-darwin-setup.dmg)
+- SHA256: `442a8409f90539d5de618ddc100249700044718c14b3cdbe394f38f870405391`
 
-**Daemon (For Servers)**
-- [fixedcoin-daemon-linux.tar.gz](https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-daemon-linux.tar.gz) (6.37 MB)
-- SHA256: `b9534576476ba008dcb2c71d2b254dfcf30a7e422c01a03339552df36d15593c`
+**Archive (Intel)**
+- [fixedcoin-25.0.0-x86_64-apple-darwin.tar.gz](https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-25.0.0-x86_64-apple-darwin.tar.gz)
+- SHA256: `0af514ea233d8b58f069d3e0b7cfc4beb7f945e75cb6373e3457f5eb0db7c57d`
+
+#### Linux
+
+**x86_64 (64-bit Intel/AMD)**
+- [fixedcoin-25.0.0-x86_64-linux-gnu.tar.gz](https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-25.0.0-x86_64-linux-gnu.tar.gz)
+- SHA256: `487afa3538250a27fda83bfd847eb9d0c21ca59b6ff0d09972c6dbd155405ca8`
+
+**ARM64 (Raspberry Pi, ARM servers)**
+- [fixedcoin-25.0.0-aarch64-linux-gnu.tar.gz](https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-25.0.0-aarch64-linux-gnu.tar.gz)
+- SHA256: `9b71643e5d3195800148c8e8aac38577ff445258959b880d86b3cdd53898801e`
 
 #### Source Code
 
@@ -129,19 +139,72 @@ Download from [GitHub Releases](https://github.com/Fixed-Blockchain/fixedcoin/re
 
 ### Windows Installation
 
-1. Download [fixedcoin-qt-windows.zip](https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-qt-windows.zip)
+**Using Installer (Recommended):**
+1. Download [fixedcoin-25.0.0-win64-setup.exe](https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-25.0.0-win64-setup.exe)
+2. Run the installer and follow the setup wizard
+3. Launch FixedCoin from Start Menu
+4. Wait for blockchain synchronization
+
+**Using Portable Archive:**
+1. Download [fixedcoin-25.0.0-win64.zip](https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-25.0.0-win64.zip)
 2. Extract the archive to a folder (e.g., `C:\FixedCoin`)
 3. Run `fixedcoin-qt.exe` to start the wallet
 4. Wait for blockchain synchronization
 
-### Linux Desktop Installation
+### macOS Installation
 
+**Using Disk Image (Recommended):**
+1. Download [fixedcoin-25.0.0-apple-darwin-setup.dmg](https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-25.0.0-apple-darwin-setup.dmg)
+2. Open the DMG file
+3. Drag FixedCoin to Applications folder
+4. Launch FixedCoin from Applications
+5. Wait for blockchain synchronization
+
+**Using Archive:**
 ```bash
-# Download GUI wallet
-wget https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-qt-linux.tar.gz
+# Download
+curl -L -O https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-25.0.0-x86_64-apple-darwin.tar.gz
 
 # Extract
-tar -xzf fixedcoin-qt-linux.tar.gz
+tar -xzf fixedcoin-25.0.0-x86_64-apple-darwin.tar.gz
+
+# Run GUI wallet
+./fixedcoin-qt
+
+# Or run daemon in background
+./fixedcoind -daemon
+```
+
+### Linux Desktop Installation
+
+**For x86_64 systems:**
+```bash
+# Download
+wget https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-25.0.0-x86_64-linux-gnu.tar.gz
+
+# Extract
+tar -xzf fixedcoin-25.0.0-x86_64-linux-gnu.tar.gz
+
+# Change to bin directory
+cd fixedcoin-25.0.0/bin
+
+# Run GUI wallet
+./fixedcoin-qt
+
+# Or run daemon in background
+./fixedcoind -daemon
+```
+
+**For ARM64 systems (Raspberry Pi, etc.):**
+```bash
+# Download
+wget https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-25.0.0-aarch64-linux-gnu.tar.gz
+
+# Extract
+tar -xzf fixedcoin-25.0.0-aarch64-linux-gnu.tar.gz
+
+# Change to bin directory
+cd fixedcoin-25.0.0/bin
 
 # Run GUI wallet
 ./fixedcoin-qt
@@ -192,36 +255,43 @@ drwxr-xr-x downloads
 ```bash
 cd /var/fixedcoin/downloads
 
-# Download daemon (6.37 MB)
-wget https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-daemon-linux.tar.gz
+# For x86_64 systems (Intel/AMD)
+wget https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-25.0.0-x86_64-linux-gnu.tar.gz
 
-# Download tools (CLI, TX utilities) (21.3 MB)
-wget https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-qt-linux.tar.gz
+# OR for ARM64 systems (Raspberry Pi, ARM servers)
+# wget https://github.com/Fixed-Blockchain/fixedcoin/releases/download/FIX/fixedcoin-25.0.0-aarch64-linux-gnu.tar.gz
 ```
 
 ### Step 3: Extract Files
 
+**For x86_64:**
 ```bash
-tar -xzvf fixedcoin-daemon-linux.tar.gz
-tar -xzvf fixedcoin-qt-linux.tar.gz
+tar -xzf fixedcoin-25.0.0-x86_64-linux-gnu.tar.gz
+```
+
+**For ARM64:**
+```bash
+tar -xzf fixedcoin-25.0.0-aarch64-linux-gnu.tar.gz
 ```
 
 Verify extraction:
 ```bash
+cd fixedcoin-25.0.0/bin
 ls -lh
 ```
 
 You should see:
-- `fixedcoind` (~14M) - Daemon
-- `fixedcoin-cli` (~1.2M) - CLI tools
-- `fixedcoin-tx` (~2.8M) - Transaction tools
-- `fixedcoin-qt` (~40M) - GUI wallet
+- `fixedcoind` - Daemon
+- `fixedcoin-cli` - CLI tools
+- `fixedcoin-tx` - Transaction tools
+- `fixedcoin-qt` - GUI wallet
+- `fixedcoin-wallet` - Wallet tool
 
 ### Step 4: Install Binaries
 
 ```bash
 # Move binaries to bin directory
-mv fixedcoind fixedcoin-cli fixedcoin-tx fixedcoin-qt /var/fixedcoin/bin/
+mv fixedcoind fixedcoin-cli fixedcoin-tx fixedcoin-qt fixedcoin-wallet /var/fixedcoin/bin/
 
 # Add to PATH
 echo 'export PATH="/var/fixedcoin/bin:$PATH"' >> ~/.bashrc
@@ -235,7 +305,8 @@ Expected output: `/var/fixedcoin/bin/fixedcoind`
 
 Clean up:
 ```bash
-rm fixedcoin-daemon-linux.tar.gz fixedcoin-qt-linux.tar.gz
+cd /var/fixedcoin/downloads
+rm -rf fixedcoin-25.0.0 fixedcoin-25.0.0-*.tar.gz
 ```
 
 ### Step 5: Configure Node
@@ -259,7 +330,7 @@ rpcport=24761
 # Network Settings
 listen=1
 server=1
-port=24762
+port=24768
 maxconnections=125
 
 # Official Seed Nodes
@@ -521,15 +592,15 @@ Configure any SHA-256 compatible mining software (cgminer, bfgminer, etc.) to po
 | 21,000 - 25,199 | 0.03125 FIX | 4,200 | 131.25 | 9,867.75 |
 | 25,200 - 29,399 | 0.015625 FIX | 4,200 | 65.625 | 9,933.375 |
 | ... | (continues halving) | ... | ... | ... |
-| 113,400+ | 0 FIX | ∞ | 0 | ~10,000 |
-| **TOTAL** | - | - | **~10,000 FIX** | - |
+| 113,400+ | 0 FIX | ∞ | 0 | 10,000 |
+| **TOTAL** | - | - | **10,000 FIX** | - |
 
 **Premine Details:**
 - **Block 1:** 1,600 FIX (16% of total supply)
 - **Purpose:** Ecosystem development, initial liquidity, community incentives
 - **Mining starts:** Block 2 onwards with standard halving schedule
 
-After block 113,400 (~2 years), no new coins are created. Network security is maintained through transaction fees.
+After block 113,400 (2 years), no new coins are created. Network security is maintained through transaction fees.
 
 ## 🔐 Security Best Practices
 
@@ -557,7 +628,7 @@ sudo ufw enable
 sudo ufw allow 22/tcp
 
 # Allow FixedCoin P2P
-sudo ufw allow 24762/tcp
+sudo ufw allow 24768/tcp
 
 # Check status
 sudo ufw status
@@ -591,8 +662,8 @@ ping node1.fixedcoin.org
 ping node2.fixedcoin.org
 
 # Manually add nodes
-fixedcoin-cli -datadir=/var/fixedcoin/data addnode "node1.fixedcoin.org:24762" "add"
-fixedcoin-cli -datadir=/var/fixedcoin/data addnode "node2.fixedcoin.org:24762" "add"
+fixedcoin-cli -datadir=/var/fixedcoin/data addnode "node1.fixedcoin.org:24768" "add"
+fixedcoin-cli -datadir=/var/fixedcoin/data addnode "node2.fixedcoin.org:24768" "add"
 ```
 
 ### Wallet issues
@@ -627,12 +698,12 @@ sudo systemctl restart fixedcoind
 The 1,600 FIX premine (16% of total supply) at block 1 provides initial liquidity for exchanges, funds community development, incentivizes early adopters, and ensures ecosystem sustainability. This is a transparent, one-time allocation locked in the blockchain forever.
 
 ### What happens after all coins are mined?
-After block 113,400 (~2 years), miners are compensated solely through transaction fees. This ensures long-term network security without inflation.
+After block 113,400 (2 years), miners are compensated solely through transaction fees. This ensures long-term network security without inflation.
 
 ### Can the code be updated later?
 No. The repository will be archived after block 1. No updates, no bug fixes, no changes. Ever. This is by design.
 
-### Why only ~10,000 coins?
+### Why only 10,000 coins?
 To create the ultimate experiment in digital scarcity. FixedCoin is 2,100x rarer than Bitcoin, making it one of the scarcest cryptocurrencies ever created.
 
 ### Is this a joke/meme coin?
@@ -642,10 +713,10 @@ No. FixedCoin is a serious experiment in protocol immutability and extreme scarc
 Build tools, wallets, services, and applications. The protocol is fixed, but the ecosystem is yours to create. Everything must be built by the community.
 
 ### What makes FixedCoin different from Bitcoin?
-- **Ultra-rare supply:** ~10,000 vs 21,000,000
+- **Ultra-rare supply:** 10,000 vs 21,000,000
 - **Premine:** 1,600 FIX for ecosystem development
 - **Absolute immutability:** No updates after archive
-- **Faster distribution:** ~2 years vs ~140 years
+- **Faster distribution:** 2 years vs 140 years
 - **Community-driven:** No foundation or central authority
 
 ### Is it safe to use?
@@ -660,7 +731,7 @@ FixedCoin uses Bitcoin's proven codebase and SHA-256 algorithm. However, as with
 
 ## ⚠️ Disclaimer
 
-FixedCoin is an experimental cryptocurrency project. The ultra-limited supply (~10,000 FIX) including a 1,600 FIX premine and unique economic model create an unprecedented experiment in digital scarcity.
+FixedCoin is an experimental cryptocurrency project. The ultra-limited supply (10,000 FIX) including a 1,600 FIX premine and unique economic model create an unprecedented experiment in digital scarcity.
 
 **Key Risks:**
 - 16% premine may affect initial distribution and decentralization
@@ -691,12 +762,12 @@ Once block 1 is mined, this repository will be **permanently archived**:
 
 **Block 0:** Genesis (1 FIX)  
 **Block 1:** Premine (1,600 FIX) - Then archived forever  
-**Block 2+:** Mining begins (8,398 FIX over ~2 years)
+**Block 2+:** Mining begins (8,398 FIX over 2 years)
 
 **Everything is Fixed. Forever.**
 
 ---
 
-**Built on Bitcoin's proven technology. Secured by SHA-256. Limited to ~10,000 coins.**
+**Built on Bitcoin's proven technology. Secured by SHA-256. Limited to 10,000 coins.**
 
 *Always verify file integrity by checking SHA256 hashes before running any binaries.*
