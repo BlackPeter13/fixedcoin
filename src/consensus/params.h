@@ -25,6 +25,7 @@ enum BuriedDeployment : int16_t {
     DEPLOYMENT_CLTV,
     DEPLOYMENT_DERSIG,
     DEPLOYMENT_CSV,
+    DEPLOYMENT_DISABLE_BIT27, // added to silence versionbit 27 warning
     DEPLOYMENT_SEGWIT,
 };
 constexpr bool ValidDeployment(BuriedDeployment dep) { return dep <= DEPLOYMENT_SEGWIT; }
