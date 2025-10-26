@@ -245,3 +245,12 @@ void VersionBitsCache::Clear()
         m_caches[d].clear();
     }
 }
+// Add info entry for the disabled versionbit 27 deployment.
+// This lets RPCs like getdeploymentinfo show a readable label instead of "unknown".
+const struct VBDeploymentInfo VersionBitsDeploymentInfo[] = {
+    {
+        /* DEPLOYMENT_DISABLE_BIT27 */
+        "disable_bit27",
+        "Disables warning for unknown versionbit 27",
+    },
+};
