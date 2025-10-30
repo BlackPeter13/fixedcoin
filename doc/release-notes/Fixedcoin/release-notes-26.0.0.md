@@ -1,4 +1,4 @@
-\# BitcoinII Core 26.0.0 - MANDATORY UPDATE
+\# FixedCoin Core 26.0.0 - MANDATORY UPDATE
 
 
 
