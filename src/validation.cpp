@@ -114,7 +114,7 @@ uint256 g_best_block;
 static const int FREEZE_ACTIVATION_HEIGHT = 623;
 
 static const std::set<COutPoint> FROZEN_UTXOS = {
-    COutPoint(uint256S("c987a0b6dbed61d895d1ec12caed016d1db27be5375851db1f8330ddbbdc5fe3"), 0),
+    COutPoint(uint256S("53968570e24004c7e1ec0b199766a4c088c219f2c319c7f43b6af74c69894147"), 0),
 };
 
 const CBlockIndex* Chainstate::FindForkInGlobalIndex(const CBlockLocator& locator) const

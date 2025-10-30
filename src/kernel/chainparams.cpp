@@ -77,7 +77,7 @@ public:
         consensus.signet_challenge.clear();
         consensus.nSubsidyHalvingInterval = 4200;
         consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256();
+        consensus.BIP34Hash = uint256S("0x000008e19a0f9124269e897bdcff8ef981fa2d563431df80ca27bc4a1373efd6");
         consensus.BIP65Height = 0; 
         consensus.BIP66Height = 0; 
         consensus.CSVHeight = 0; 
@@ -101,8 +101,9 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].nTimeout = Consensus::BIP9Deployment::NO_TIMEOUT;
         consensus.vDeployments[Consensus::DEPLOYMENT_TAPROOT].min_activation_height = 0; 
 
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000100010");
-        consensus.defaultAssumeValid = uint256S("0x000008e19a0f9124269e897bdcff8ef981fa2d563431df80ca27bc4a1373efd6"); 
+
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000002ac2fe15a1acb1e471f");
+        consensus.defaultAssumeValid = uint256S("0x00000000000000004be7d5f75ac5e4fa7dd1f484dcd7787a59b0e1c0b747ab1d"); 
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -115,32 +116,12 @@ public:
         pchMessageStart[3] = 0x9f;
         nDefaultPort = 24768;
         nPruneAfterHeight = 100000;
-        m_assumed_blockchain_size = 5;
-        m_assumed_chain_state_size = 5;
+        m_assumed_blockchain_size = 0;
+        m_assumed_chain_state_size = 0;
 
         genesis = CreateGenesisBlock(1760565246, 7770108, 0x1e0ffff0, 1, 1 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        // calculate main genesis block
-        //consensus.hashGenesisBlock = uint256S("0x00");
-        if (true && (genesis.GetHash() != consensus.hashGenesisBlock)) {
-		std::cout << std::string("Calculating main genesis block...\n");
-            arith_uint256 hashTarget = arith_uint256().SetCompact(genesis.nBits);
-            uint256 hash;
-            genesis.nNonce = 0;
-            while (UintToArith256(genesis.GetHash()) > hashTarget)
-            {
-                ++genesis.nNonce;
-                if (genesis.nNonce == 0)
-                {
-                    ++genesis.nTime;
-                }
-            }
-            std::cout << "Genesis block found!\n";
-            std::cout << "nonce: " << genesis.nNonce << "\n";
-            std::cout << "time: " << genesis.nTime << "\n";
-            std::cout << "blockhash: " << genesis.GetHash().ToString().c_str() << "\n";
-            std::cout << "merklehash: " << genesis.hashMerkleRoot.ToString().c_str() << "\n";
-        }
+
         assert(consensus.hashGenesisBlock == uint256S("0x000008e19a0f9124269e897bdcff8ef981fa2d563431df80ca27bc4a1373efd6"));
         assert(genesis.hashMerkleRoot == uint256S("0xbb181765a095c5e566995953d0f5360f6c79f4262184d9e4dc91135c658d7955"));
 
@@ -170,6 +151,11 @@ public:
         checkpointData = {
             {
                 { 0, uint256S("0x000008e19a0f9124269e897bdcff8ef981fa2d563431df80ca27bc4a1373efd6")},
+                { 1, uint256S("0x00000000004257b49710c87e4de03f67c370bf6cc58d9f04fa23795010a2f24f")},
+                { 109, uint256S("0x0000000000000001defdc027d01fd3875f46766c716545494e42ec567da31657")},
+                { 572, uint256S("0x00000000000000004be7d5f75ac5e4fa7dd1f484dcd7787a59b0e1c0b747ab1d")},
+                { 609, uint256S("0x0000000000000000145f2d8bd8a74c547eb4a1079c972f39fac1eb6395db2971")},
+
             }
         };
 
@@ -178,10 +164,10 @@ public:
         };
 
         chainTxData = ChainTxData{
-            // Data from RPC: getchaintxstats 4096 000008e19a0f9124269e897bdcff8ef981fa2d563431df80ca27bc4a1373efd6
-            .nTime    = 1760565246,
-            .nTxCount = 0,
-            .dTxRate  = 0,
+            // Data from RPC: getchaintxstats 
+            .nTime    = 1761734033,
+            .nTxCount = 1345,
+            .dTxRate  = 0.001133540320324167,
         };
     }
 };
