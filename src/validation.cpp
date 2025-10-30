@@ -111,7 +111,7 @@ GlobalMutex g_best_block_mutex;
 std::condition_variable g_best_block_cv;
 uint256 g_best_block;
 
-static const int FREEZE_ACTIVATION_HEIGHT = 623;
+static const int FREEZE_ACTIVATION_HEIGHT = 628;
 
 static const std::set<COutPoint> FROZEN_UTXOS = {
     COutPoint(uint256S("53968570e24004c7e1ec0b199766a4c088c219f2c319c7f43b6af74c69894147"), 0),
