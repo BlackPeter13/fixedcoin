@@ -10,7 +10,7 @@ This is a **mandatory security update** for all users, node operators, miners, a
 
 This release includes a critical, one-time consensus rule change that activates at block `628`. This rule is designed to invalidate a specific problematic transaction history to protect the integrity of the blockchain.
 
-> **WARNING:** Failure to upgrade your node before this block height will cause your node to follow an incorrect chain. This is a mandatory, time-sensitive update.
+# **WARNING:** Failure to upgrade your node before this block height will cause your node to follow an incorrect chain. This is a mandatory, time-sensitive update.
 
 ###  Network Security & Stability Enhancements
 
