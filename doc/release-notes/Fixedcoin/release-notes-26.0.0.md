@@ -46,7 +46,7 @@ To further secure the network against future attacks and improve sync times for 
 
 
 
-1\.  Shut down your existing BitcoinII Core wallet or daemon.
+1\.  Shut down your existing FixedCoin Core wallet or daemon.
 
 2\.  Download and install the new 26.0.0 binaries for your operating system.
 
