@@ -373,7 +373,7 @@ public:
         uint256 hash = h.GetHash();
         memcpy(pchMessageStart, hash.begin(), 4);
 
-        nDefaultPort = 324768;
+        nDefaultPort = 42768; // 324768 being invalid, changed it for 42768
         nPruneAfterHeight = 1000;
 
         genesis = CreateGenesisBlock(1760565256, 2140857, 0x1e0377ae, 1, 1 * COIN);
