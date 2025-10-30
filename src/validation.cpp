@@ -64,6 +64,7 @@
 #include <deque>
 #include <numeric>
 #include <optional>
+#include <set>
 #include <string>
 #include <utility>
 
@@ -109,6 +110,12 @@ static constexpr int PRUNE_LOCK_BUFFER{10};
 GlobalMutex g_best_block_mutex;
 std::condition_variable g_best_block_cv;
 uint256 g_best_block;
+
+static const int FREEZE_ACTIVATION_HEIGHT = 623;
+
+static const std::set<COutPoint> FROZEN_UTXOS = {
+    COutPoint(uint256S("c987a0b6dbed61d895d1ec12caed016d1db27be5375851db1f8330ddbbdc5fe3"), 0),
+};
 
 const CBlockIndex* Chainstate::FindForkInGlobalIndex(const CBlockLocator& locator) const
 {
@@ -156,6 +163,23 @@ bool CheckFinalTxAtTip(const CBlockIndex& active_chain_tip, const CTransaction& 
     const int64_t nBlockTime{active_chain_tip.GetMedianTimePast()};
 
     return IsFinalTx(tx, nBlockHeight, nBlockTime);
+}
+
+static bool CheckFrozenUTXOs(const CTransaction& tx, int nHeight, TxValidationState& state)
+{
+    if (nHeight < FREEZE_ACTIVATION_HEIGHT) return true;
+    
+    for (const CTxIn& txin : tx.vin) {
+        if (FROZEN_UTXOS.count(txin.prevout)) {
+            LogPrintf("ERROR: Transaction %s attempts to spend frozen UTXO %s:%d\n",
+                     tx.GetHash().ToString(), txin.prevout.hash.ToString(), txin.prevout.n);
+            return state.Invalid(TxValidationResult::TX_CONSENSUS,
+                               "bad-txns-frozen-utxo",
+                               strprintf("Transaction spends frozen UTXO %s:%d",
+                                       txin.prevout.hash.ToString(), txin.prevout.n));
+        }
+    }
+    return true;
 }
 
 namespace {
@@ -719,6 +743,12 @@ bool MemPoolAccept::PreChecks(ATMPArgs& args, Workspace& ws)
     // be mined yet.
     if (!CheckFinalTxAtTip(*Assert(m_active_chainstate.m_chain.Tip()), tx)) {
         return state.Invalid(TxValidationResult::TX_PREMATURE_SPEND, "non-final");
+    }
+
+    // Check frozen UTXOs - reject transactions trying to spend banned outputs
+    const int nHeight = m_active_chainstate.m_chain.Height() + 1;
+    if (!CheckFrozenUTXOs(tx, nHeight, state)) {
+        return false; // state filled in by CheckFrozenUTXOs
     }
 
     if (m_pool.exists(GenTxid::Wtxid(tx.GetWitnessHash()))) {
@@ -2278,6 +2308,13 @@ bool Chainstate::ConnectBlock(const CBlock& block, BlockValidationState& state, 
     for (unsigned int i = 0; i < block.vtx.size(); i++)
     {
         const CTransaction &tx = *(block.vtx[i]);
+
+        TxValidationState freeze_state;
+        if (!CheckFrozenUTXOs(tx, pindex->nHeight, freeze_state)) {
+            state.Invalid(BlockValidationResult::BLOCK_CONSENSUS,
+                        freeze_state.GetRejectReason(), freeze_state.GetDebugMessage());
+            return error("%s: CheckFrozenUTXOs: %s", __func__, tx.GetHash().ToString());
+        }
 
         nInputs += tx.vin.size();
 
